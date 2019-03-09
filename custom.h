@@ -4,6 +4,7 @@
 struct result{
 	int value;
 	int itemcount[128];
+	int made;
 };
 
 struct bag{
@@ -12,7 +13,9 @@ struct bag{
 	char name[64];
 };
 
-struct bag sack[1024];
+struct bag items[128];
+
+struct result sack[1024];
 
 struct result maxval(int);
 
