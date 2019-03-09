@@ -8,10 +8,10 @@ PA5 is a C program that calculates the maximum
 value a knapsack of a given size can hold of 
 specific items.
 -----------------------------------------------
-Word division:
+Work division:
 Trevor	- Knapsack.data reading and displaying, header file, tidying up
 Ethan	- MaxVal, main program results display
-Ryan	- Main program argument handling, Makefile
+Ryan	- Main program argument handling, Makefile, printf formatting
 */
 
 #include "custom.h"
@@ -21,7 +21,7 @@ void main(int argc, char** argv){
 	int ret, capacity;
 	//------ARGUMENT HANDLING------
 	if (argc == 1){ //No command line argument detected
-		printf("Input knapsack capacity: ");
+		printf("\nInput knapsack capacity: ");
 		fgets(buffer, 120, stdin);
 		ret=sscanf(buffer, "%d", &capacity);
 	}
@@ -36,24 +36,29 @@ void main(int argc, char** argv){
 		printf("Invalid input.\n");
 		return;
 	}
-	printf("Knapsack capacity is %d\n", capacity); //Valid user input
 	//------FILE READING------
 	int i=sackinfo();
 	//------PRINT SACK CONTENTS------
 	int itemcount;
-	printf("Sack contents:\n");
+	printf("\nAvailable Items\n");
+	printf("------------------------------\n");
+	printf("Weight	  Value	     Name\n");
+	printf("------	  -----	     ----\n");
 	for(itemcount=0; itemcount < i; itemcount++){
-		printf("%d %d %s\n", items[itemcount].wt, items[itemcount].val, items[itemcount].name);
+		printf(" %d   	   %d        %s\n", items[itemcount].wt, items[itemcount].val, items[itemcount].name);
 	}
+	printf("------------------------------\n");
 	//------RESULTS------
 	struct result final = maxval(capacity);
 	int j = 0;
-	printf("There are ");
+	printf("\nKnapsack capacity=%d\n", capacity);
+	printf("Max value=%d\n", final.value);
+	printf("Contents:\n");
 	while(j < 128){
 		if(final.itemcount[j] != 0){
-			printf("%d %s, ", final.itemcount[j], items[j].name);
+			printf(" %d %s\n", final.itemcount[j], items[j].name);
 		}
 		j++;
 	}
-	printf("in the ideal sack\n");
+	printf("\n");
 }
