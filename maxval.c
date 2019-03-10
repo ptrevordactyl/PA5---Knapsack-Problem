@@ -1,6 +1,10 @@
 #include "custom.h"
 
 struct result maxval(int cap){
+  //Base case
+  sack[0].value=0;
+  sack[0].made=1;
+
   //this if statement will check the array that contains already calculated capacities
   if(sack[cap].made == 1){
     return sack[cap];

@@ -49,8 +49,16 @@ void main(int argc, char** argv){
 	}
 	printf("------------------------------\n");
 	//------RESULTS------
+	int j;
+	for(j=0; j<1025; j++){//Init global array that stores  maxval() calculations
+		sack[j].value=0;
+		for(int k=0; k<128; k++){
+			sack[j].itemcount[k]=0;
+		}
+		sack[j].made=0;
+	}	
 	struct result final = maxval(capacity);
-	int j = 0;
+	j = 0;
 	printf("\nKnapsack capacity=%d\n", capacity);
 	printf("Max value=%d\n", final.value);
 	printf("Contents:\n");

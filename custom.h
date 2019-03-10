@@ -15,7 +15,7 @@ struct bag{
 
 struct bag items[128];
 
-struct result sack[1024];
+struct result sack[1025];
 
 struct result maxval(int);
 
