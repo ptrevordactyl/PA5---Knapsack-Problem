@@ -1,3 +1,13 @@
+/*===========================
+Maxval
+-----------------------------
+Recursively checks all
+possible outcomes for a 
+knapsack of a given capacity
+and returns the one with the
+largest value.
+===========================*/
+
 #include "custom.h"
 
 struct result maxval(int cap){

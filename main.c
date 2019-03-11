@@ -42,10 +42,10 @@ void main(int argc, char** argv){
 	int itemcount;
 	printf("\nAvailable Items\n");
 	printf("------------------------------\n");
-	printf("Weight	  Value	     Name\n");
-	printf("------	  -----	     ----\n");
+	printf("Weight	Value	Name\n");
+	printf("------	-----	----\n");
 	for(itemcount=0; itemcount < i; itemcount++){
-		printf(" %d   	   %d        %s\n", items[itemcount].wt, items[itemcount].val, items[itemcount].name);
+		printf(" %d	%d	%s\n", items[itemcount].wt, items[itemcount].val, items[itemcount].name);
 	}
 	printf("------------------------------\n");
 	//------RESULTS------
@@ -64,9 +64,8 @@ void main(int argc, char** argv){
 	printf("Contents:\n");
 	while(j < 128){
 		if(final.itemcount[j] != 0){
-			printf(" %d %s\n", final.itemcount[j], items[j].name);
+			printf("%d %s\n", final.itemcount[j], items[j].name);
 		}
 		j++;
 	}
-	printf("\n");
 }

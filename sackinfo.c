@@ -1,6 +1,6 @@
 /**=================================
-Trevor Holland
-Sack info:
+Sack info
+------------------------------------
 reads from the file "knapsack.data"
 and stores that information in
 a global array.
